@@ -47,9 +47,9 @@ const Footer = () => {
           <div className="mainContent">
             <h3>Social Media</h3>
             <ul>
-              <li><i class="fa-brands fa-facebook"></i> Facebook</li>
+              <li><a href="https://www.facebook.com/profile.php?id=100093466232533"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
               <li><a href="https://instagram.com/tecviz_?igshid=NTc4MTIwNjQ2YQ=="><i class="fa-brands fa-instagram"></i> Instagram</a></li>
-              <li><i class="fa-brands fa-twitter"></i> Twitter</li>
+              <li><a href="https://twitter.com/tecviz_"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
               <li><a href="https://github.com/TecvizHub"><i class="fa-brands fa-github"></i> Github</a></li>
               <li><a href="https://wa.me/message/VLWLZQCLQR5EF1"><i class="fa-brands fa-whatsapp"></i> Whatsapp</a></li>
               <li><a href="http://www.linkedin.com/in/"><i class="fa-brands fa-linkedin"></i> Linkedin</a></li>
