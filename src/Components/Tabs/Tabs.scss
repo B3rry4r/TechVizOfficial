@@ -1,0 +1,162 @@
+.tab{
+    position: relative;
+
+    img{
+        position: absolute !important;
+        height: 100%;
+        width: 230px;
+        opacity: .1;
+        top: 120px;
+        right: 0 !important;
+        // z-index: 200;
+    }
+
+
+.tabContainer{
+    // height: calc(100vh - 79px);
+    height: 700px;
+    width: 80%;
+    padding: 90px 50px;
+    margin: 20px auto;
+    position: relative !important;
+
+    
+
+    .tabDesc{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin-bottom: 10px;
+
+        
+        h1{
+            color: #17234D;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 25px;
+            
+            span{
+                color: #F58125;
+                font-size: 25px;
+            }
+        }
+
+        span{
+            font-size: 50px;
+            color: #17234D;
+            font-family: 'Montserrat', sans-serif;
+            // font-weight: 600;
+
+
+            strong{
+                font-weight: 800;
+                color: #F58125;
+
+            }
+        }
+    }
+        
+    .tabHeaders{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        // justify-content: center;
+        gap: 40px;
+        border-bottom: 1px solid #bbb;
+
+
+        .tabHeader{
+            position: relative;
+            padding: 0 5px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 10px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            transition: all .4s ease-in-out;
+            cursor: pointer;
+            &:hover{
+                color: #F58125;
+                // transform: scale(1.05);
+            }
+            &::before{
+                content: "";
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transition: 0.5s;
+                width: 0%;
+                height: 2px;
+                background-color: #F58125;
+                border-radius: 10px;    
+            }
+
+            &:hover::before{
+                width: 100%;
+                left: 0; 
+            }
+            
+        }
+        
+        .active{
+            color: #F58125;
+            &::before{
+                content: "";
+                position: absolute;
+                bottom: 10px;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: #F58125;
+                border-radius: 10px;    
+            }
+        }   
+    }
+
+    .tabBody{
+        
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 20px;
+            padding: 40px 20px;
+
+            h1{
+                font-size: 30px;
+                font-family: 'Montserrat', sans-serif;
+                color: #17234D;
+            }
+            p{
+                font-size: 20px;
+                font-family: 'Montserrat', sans-serif;
+                color: #17234D;
+            }
+        }
+
+    }
+    button{
+        margin-top: 40px;
+        margin-left: 20px;
+        padding: 15px 25px;
+        width: 200px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        background-color: white;
+        box-shadow: rgba(89, 89, 94, 0.5) 0px 7px 29px 0px;
+        transition: all .5s ease-in-out;
+
+        &:hover {
+            transform: scale(1.1);
+            background: #17234d;
+            color: #fff;
+        }
+    }
+}
+}

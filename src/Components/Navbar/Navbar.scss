@@ -1,0 +1,148 @@
+@import "../../style.scss";
+
+.sticky {
+    position: sticky !important;
+    // background-color: rgba(23, 35, 77, .8);
+    // background-color: #000;
+    top: 0 !important;
+}
+
+.onScrollActive {
+    color: black !important;
+    border-bottom: 1px solid #c2c2c2;
+
+    .center {
+
+        ul {
+            li {
+                &:after {
+                    background-color: black !important;
+                }
+
+                a {
+                    color: black !important;
+                }
+
+            }
+
+        }
+
+    }
+
+    .right {
+
+        p {
+            border: 2px solid black !important;
+        }
+    }
+}
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-size: cover;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2000;
+    transition: all .4s ease-in-out;
+
+    .left {
+
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+            // color: #17234D;
+
+            span {
+                color: rgb(245, 129, 37);
+            }
+        }
+    }
+
+    .center {
+
+        ul {
+            text-decoration: none;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+
+            @include tablet {
+                display: none;
+            }
+
+            li {
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 500;
+                cursor: pointer;
+                position: relative;
+
+                a {
+                    text-decoration: none;
+                    color: #fff;
+                }
+
+                &:after {
+                    position: absolute;
+                    content: "";
+                    width: 0%;
+                    transition: 0.4s;
+                    height: 2px;
+                    bottom: -5px;
+                    left: 50%;
+                    background-color: #fff;
+                }
+
+                .dropdown-content {
+                    display: flex;
+                    padding: 30px;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 30px;
+                    gap: 20px;
+                    min-width: auto;
+                    // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                    z-index: 1;
+
+                    li {
+
+                        &:hover {
+                            background-color: #17234d;
+                            display: block;
+
+                        }
+
+                        a {
+                            text-decoration: none;
+                            color: white;
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                &:hover::after {
+                    width: 100%;
+                    left: 0;
+                }
+            }
+
+        }
+    }
+
+    .right {
+        p {
+            font-family: 'Montserrat', sans-serif;
+            padding: 5px 15px;
+            border: 2px solid white;
+            cursor: pointer;
+        }
+    }
+}

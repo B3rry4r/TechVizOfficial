@@ -1,0 +1,28 @@
+.countDown {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    // color: #17234d;
+    color: white;
+  
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  
+    div{
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Montserrat', sans-serif;
+
+
+        p {
+            color: #F58125;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 10px;
+          }
+    }
+  }
+  
