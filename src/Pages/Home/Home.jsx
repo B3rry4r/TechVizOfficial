@@ -39,7 +39,8 @@ const Home = () => {
 
     //Scroll Reveal
     useEffect(() => {
-        const sr = ScrollReveal();
+        if (!isLoading) {
+            const sr = ScrollReveal();
 
         // Define the configuration options for each element
         const revealConfigs = [
@@ -109,14 +110,16 @@ const Home = () => {
                     reset: true,
                 },
             },
+            //SomeThingBigElements
             // Add more objects for additional elements
         ];
 
-        revealConfigs.forEach(({ element, config }) => {
-            const elements = document.querySelectorAll(element);
-            sr.reveal(elements, config);
+        revealConfigs?.forEach(({ element, config }) => {
+            const elements = document?.querySelectorAll(element);
+            sr?.reveal(elements, config);
         });
-    }, []);
+        }
+    }, [isLoading]);
 
 
     //Carousel

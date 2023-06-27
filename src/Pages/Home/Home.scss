@@ -321,6 +321,7 @@
           }
 
         .bigAnimation{
+            overflow: hidden;
             width: 250px;
             height: 250px;
             opacity: .6;
@@ -464,9 +465,10 @@
                 grid-gap: 20px;
 
                 p {
-                    font-family: 'Inter', sans-serif;
+                    font-family: 'Montserrat', sans-serif;
                     padding: 10px 15px;
-                    background-color: rgba(245, 129, 37, .7);
+                    font-size: 15px;
+                    background-color: rgba(245, 129, 37, .8);
                     // background-color: #F58125;
                     color: white;
                     cursor: pointer;

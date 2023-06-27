@@ -1,12 +1,5 @@
 @import "../../style.scss";
 
-.sticky {
-    position: sticky !important;
-    // background-color: rgba(23, 35, 77, .8);
-    // background-color: #000;
-    top: 0 !important;
-}
-
 .onScrollActive {
     color: black !important;
     border-bottom: 1px solid #c2c2c2;
@@ -32,7 +25,7 @@
     .right {
 
         p {
-            border: 2px solid black !important;
+            border: 2px solid rgb(124, 124, 124) !important;
         }
     }
 }
