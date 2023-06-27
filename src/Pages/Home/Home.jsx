@@ -1,29 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import Tabs from '../../Components/Tabs/Tabs';
 import image1 from '../../Assets/image(1).jpg';
 import image2 from '../../Assets/image(2).jpg';
 import image3 from '../../Assets/image(3).jpg';
 import image4 from '../../Assets/image(4).jpg';
 import image5 from '../../Assets/image(5).jpg';
 import image6 from '../../Assets/image(6).jpg';
-import appLogoWO from '../../Assets/AppLogos/TechvizAppLogoWO.svg'
 import tv from '../../Assets/tv.json';
-import sphere from '../../Assets/shpereM.json';
 import ScrollReveal from 'scrollreveal';
 import Lottie from 'lottie-react';
 import './Home.scss';
 import CountdownTimer from '../../Components/CountdownTimer/CountdownTimer';
+import CountdownTimerContainer from '../../Components/CountdownTimerContainer/CountdownTimerContainer';
 
 
 const Home = () => {
     const [isLoading, setIsLoading] = useState(true);
-    
     useEffect(() => {
         if (isLoading) {
-          // Scroll to the top of the page
-          window.scrollTo(0, 0);
+            // Scroll to the top of the page
+            window.scrollTo(0, 0);
         }
-      }, [isLoading]);
+    }, [isLoading]);
 
 
     useEffect(() => {
@@ -233,19 +230,7 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
-
-                        <div className="somethingBig">
-                            <p>Hey</p>
-                            <h2>Something <span>Big</span> is Coming!</h2>
-                            <CountdownTimer />
-                            <div className="bigAnimation">
-                                <Lottie animationData={sphere} loop={true} />
-                            </div>
-                            <div className="appLogo">
-                                <img src={appLogoWO} alt="" />
-                            </div>
-                        </div>
-
+                        <CountdownTimerContainer />
                         <div className="visionSection">
                             <div className="content">
                                 <div className="file">
@@ -287,7 +272,7 @@ const Home = () => {
                                     <h1>Our <span>Products</span></h1>
                                     <p>We offer you a wide range of services</p>
                                 </div>
-                                <div className="products">
+                                <div className="productsHome">
                                     <p className='animated-p' >Web Development</p>
                                     <p className='animated-p' >Artificial Intelligence</p>
                                     <p className='animated-p' >Graphics Design</p>

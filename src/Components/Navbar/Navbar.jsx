@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Navbar.scss';
+import { NavLink, useLocation } from 'react-router-dom';
 
 
 const Navbar = () => {
-
+  const location = useLocation();
   const [navbarColor, setNavbarColor] = useState('transparent');
   const [navbarClass, setNavbarClass] = useState('');
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -51,16 +52,24 @@ const Navbar = () => {
       </div>
       <div className="center">
         <ul>
-          <li>Products</li>
-          <li>Forum</li>
+          <li>
+          <NavLink exact to="/" activeClassName="active">
+            Home
+          </NavLink>
+          </li>
+          <li>
+            <NavLink to="/products" activeClassName="active">
+            Products
+            </NavLink>
+          </li>
           <li>Research</li>
           <li>Developers</li>
           <li ref={dropdownRef}>
             <a href='#' onClick={toggleDropdown}>Company</a>
             {isDropdownOpen ? (
               <ul className={`dropdown-content `} style={{ backgroundColor: navbarColor }}>
-                <li><a href="#">Forum</a></li>
-                <li><a href="#">Research</a></li>
+                <li><a href="#">Teams</a></li>
+                <li><a href="#">Features</a></li>
                 <li><a href="#">Products</a></li>
                 <li><a href="#">Developers</a></li>
               </ul>
