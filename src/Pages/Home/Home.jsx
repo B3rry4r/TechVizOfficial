@@ -6,6 +6,7 @@ import image3 from '../../Assets/image(3).jpg';
 import image4 from '../../Assets/image(4).jpg';
 import image5 from '../../Assets/image(5).jpg';
 import image6 from '../../Assets/image(6).jpg';
+import appLogoWO from '../../Assets/AppLogos/TechvizAppLogoWO.svg'
 import tv from '../../Assets/tv.json';
 import sphere from '../../Assets/shpereM.json';
 import ScrollReveal from 'scrollreveal';
@@ -13,8 +14,17 @@ import Lottie from 'lottie-react';
 import './Home.scss';
 import CountdownTimer from '../../Components/CountdownTimer/CountdownTimer';
 
+
 const Home = () => {
     const [isLoading, setIsLoading] = useState(true);
+    
+    useEffect(() => {
+        if (isLoading) {
+          // Scroll to the top of the page
+          window.scrollTo(0, 0);
+        }
+      }, [isLoading]);
+
 
     useEffect(() => {
         const preloadedImages = images.map((images) => {
@@ -42,82 +52,105 @@ const Home = () => {
         if (!isLoading) {
             const sr = ScrollReveal();
 
-        // Define the configuration options for each element
-        const revealConfigs = [
-            {
-                element: '.static-element',
-                config: {
-                    origin: 'bottom',
-                    distance: '40px',
-                    duration: 400,
-                    delay: 200,
-                    easing: 'ease-out',
-                    reset: true,
+            // Define the configuration options for each element
+            const revealConfigs = [
+                {
+                    element: '.static-element',
+                    config: {
+                        origin: 'bottom',
+                        distance: '40px',
+                        duration: 400,
+                        delay: 200,
+                        easing: 'ease-out',
+                        reset: true,
+                    },
                 },
-            },
-            {
-                element: '.static-element p',
-                config: {
-                    origin: 'right',
-                    distance: '70px',
-                    duration: 800,
-                    delay: 200,
-                    easing: 'ease-out',
-                    reset: true,
+                {
+                    element: '.static-element p',
+                    config: {
+                        origin: 'right',
+                        distance: '70px',
+                        duration: 800,
+                        delay: 200,
+                        easing: 'ease-out',
+                        reset: true,
+                    },
                 },
-            },
-            {
-                element: '.static-element h3',
-                config: {
-                    origin: 'right',
-                    distance: '100px',
-                    duration: 800,
-                    delay: 300,
-                    easing: 'ease-out',
-                    reset: true,
+                {
+                    element: '.static-element h3',
+                    config: {
+                        origin: 'right',
+                        distance: '100px',
+                        duration: 800,
+                        delay: 300,
+                        easing: 'ease-out',
+                        reset: true,
+                    },
                 },
-            },
-            {
-                element: '.static-element h1',
-                config: {
-                    origin: 'left',
-                    distance: '70px',
-                    duration: 800,
-                    delay: 300,
-                    easing: 'ease-out',
-                    reset: true,
+                {
+                    element: '.static-element h1',
+                    config: {
+                        origin: 'left',
+                        distance: '70px',
+                        duration: 800,
+                        delay: 300,
+                        easing: 'ease-out',
+                        reset: true,
+                    },
                 },
-            },
-            {
-                element: '.static-element button',
-                config: {
-                    origin: 'left',
-                    distance: '70px',
-                    duration: 800,
-                    delay: 300,
-                    easing: 'ease-out',
-                    reset: true,
+                {
+                    element: '.static-element button',
+                    config: {
+                        origin: 'left',
+                        distance: '70px',
+                        duration: 800,
+                        delay: 300,
+                        easing: 'ease-out',
+                        reset: true,
+                    },
                 },
-            },
-            {
-                element: '.staticAnimation',
-                config: {
-                    origin: 'top',
-                    distance: '70px',
-                    duration: 800,
-                    delay: 300,
-                    easing: 'ease-out',
-                    reset: true,
+                {
+                    element: '.staticAnimation',
+                    config: {
+                        origin: 'top',
+                        distance: '70px',
+                        duration: 800,
+                        delay: 300,
+                        easing: 'ease-out',
+                        reset: true,
+                    },
                 },
-            },
-            //SomeThingBigElements
-            // Add more objects for additional elements
-        ];
+                // {
+                //     element: '.animated-p',
+                //     config: {
+                //         origin: 'bottom',
+                //         distance: '40px',
+                //         duration: 1000,
+                //         delay: 300,
+                //         easing: 'ease-out',
+                //         reset: true,
+                //     },
+                // },
+                //SomeThingBigElements
+                // Add more objects for additional elements
+            ];
 
-        revealConfigs?.forEach(({ element, config }) => {
-            const elements = document?.querySelectorAll(element);
-            sr?.reveal(elements, config);
-        });
+            const paragraphs = document.querySelectorAll('.animated-p');
+            paragraphs.forEach((paragraph, index) => {
+                sr.reveal(paragraph, {
+                    delay: 200 * index, // Delay increases for each paragraph
+                    distance: '40px',
+                    origin: 'bottom',
+                    duration: 300,
+                    easing: 'ease-out',
+                    reset: true
+                });
+            });
+
+            revealConfigs?.forEach(({ element, config }) => {
+                const elements = document?.querySelectorAll(element);
+                sr?.reveal(elements, config);
+            });
         }
     }, [isLoading]);
 
@@ -206,7 +239,10 @@ const Home = () => {
                             <h2>Something <span>Big</span> is Coming!</h2>
                             <CountdownTimer />
                             <div className="bigAnimation">
-                            <Lottie animationData={sphere} loop={true} />
+                                <Lottie animationData={sphere} loop={true} />
+                            </div>
+                            <div className="appLogo">
+                                <img src={appLogoWO} alt="" />
                             </div>
                         </div>
 
@@ -243,25 +279,27 @@ const Home = () => {
                                     </div>
                                 </div>
                             </div>
-                        </div><Tabs /><div className="productSection">
+                        </div>
+                        {/* <Tabs /> */}
+                        <div className="productSection">
                             <div className="content">
                                 <div className="contentDesc">
                                     <h1>Our <span>Products</span></h1>
                                     <p>We offer you a wide range of services</p>
                                 </div>
                                 <div className="products">
-                                    <p>Web Development</p>
-                                    <p>Artificial Intelligence</p>
-                                    <p>Graphics Design</p>
-                                    <p>UI/UX Design</p>
-                                    <p>App Development</p>
-                                    <p>Architechture</p>
-                                    <p>Studio Management</p>
-                                    <p>Videography</p>
-                                    <p>Robotics</p>
-                                    <p>Content Creation</p>
-                                    <p>Computer Hardware</p>
-                                    <p>Social Media Management</p>
+                                    <p className='animated-p' >Web Development</p>
+                                    <p className='animated-p' >Artificial Intelligence</p>
+                                    <p className='animated-p' >Graphics Design</p>
+                                    <p className='animated-p' >UI/UX Design</p>
+                                    <p className='animated-p' >App Development</p>
+                                    <p className='animated-p' >Architechture</p>
+                                    <p className='animated-p' >Studio Management</p>
+                                    <p className='animated-p' >Videography</p>
+                                    <p className='animated-p' >Robotics</p>
+                                    <p className='animated-p' >Content Creation</p>
+                                    <p className='animated-p' >Computer Hardware</p>
+                                    <p className='animated-p' >Social Media Management</p>
                                 </div>
                             </div>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus, sint!</p>
