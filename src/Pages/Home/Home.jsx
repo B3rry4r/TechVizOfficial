@@ -271,7 +271,7 @@ const Home = () => {
                         <div className="productSection">
                             <div className="content">
                                 <div className="contentDesc">
-                                    <h1>Our <span>Products</span></h1>
+                                    <h1>Our <span>Services</span></h1>
                                     <p>We offer you a wide range of services</p>
                                 </div>
                                 <div className="productsHome">

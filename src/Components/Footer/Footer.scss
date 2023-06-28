@@ -8,8 +8,12 @@
     flex-direction: column;
     gap: 120px;
     position: relative;
+    @include tablet{
+        padding: 70px;
+        height: auto;
+    }
     @include mobile{
-        padding: 40px;
+        padding: 70px 40px 40px;
         height: auto;
     }
 
@@ -38,41 +42,32 @@
         }
 
         .mainCenter {
-            display: flex;
-            gap: 90px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+            grid-gap: 10px;
             @include mobile{
-                flex-wrap: wrap;
-                gap: 30px;
+                grid-template-columns: repeat(2, 50%);
+                grid-gap: 10px;
             }
 
-            .mainContent:nth-of-type(1) {
-                width: 300px;
-
+            .mainContent:nth-of-type(3) {
                 @include mobile{
-                    width: auto;
-                }
-            }
-
-
-            .mainContent:nth-of-type(3){
-                @include mobile{
-                    margin-top: 30px;                    
+                    margin-top: 30px;
                 }
             }
 
             .mainContent:nth-of-type(4) {
                 @include mobile{
-                    display: none;
+                    margin-top: 30px;
                 }
             }
 
             .mainContent {
-                // padding-top: 20px;
-                padding-left: 5px;
                 display: flex;
                 flex-direction: column;
                 gap: 30px;
-                width: 25%;
+                width: auto;
 
                 h3 {
                     color: #444444;
@@ -87,6 +82,7 @@
                     list-style: none;
                     color: #505050;
                     font-family: 'Inter', sans-serif;
+                    
 
                     li {
                         display: flex;
@@ -133,6 +129,9 @@
         p:nth-of-type(2) {
             cursor: pointer;
             transition: all .4s ease-in-out;
+            @include mobile{
+                font-size: 12px;
+            }
 
             &:hover {
                 color: #F58125;
@@ -143,6 +142,10 @@
             color: #505050;
             font-family: 'Inter', sans-serif;
             font-size: 15px;
+            @include mobile{
+                font-size: 12px;
+            }
+
         }
     }
 }

@@ -14,6 +14,11 @@
         position: absolute;
         top: 30px;
         left: 130px;
+        @include tablet{
+            width: 250px;
+            height: 250px;
+            left: 50px;
+        }
         @include mobile{
             width: 250px;
             height: 250px;
@@ -61,6 +66,9 @@
             gap: 40px;
             flex: 4;
             color: white;
+            @include tablet{
+                padding: 0; 
+            }
             @include mobile{
                 padding: 0;
                 padding-top: 60px;
@@ -68,8 +76,10 @@
 
             h1{
                 font-family: 'Montserrat', sans-serif;
-                @include mobile{
+                @include tablet{
                     font-size: 27px;
+                }
+                @include mobile{
                     text-align: center;
                 }
                 span{
@@ -78,8 +88,10 @@
             }
             p{
                 font-family: 'Montserrat', sans-serif;
-                @include mobile{
+                @include tablet{
                     font-size: 14px;
+                }
+                @include mobile{
                     text-align: center;
                 }
             }
@@ -87,6 +99,12 @@
 
         .productTopRight{
             flex: 6;
+            @include tablet{
+                padding: 20px; 
+            }
+            @include mobile{
+                padding: 0;
+            }
 
 
             img{
@@ -100,6 +118,10 @@
         margin-bottom: 100px;
         display: flex;
         justify-content: space-between;
+        
+        @include tablet{
+            flex-direction: column;
+        }
         @include mobile{
             flex-direction: column;
         }
@@ -115,7 +137,8 @@
             top: 0;
             flex-direction: column;
             gap: 10px;
-            @include mobile{
+            
+            @include tablet{
                 position: static;
                 padding: 20px;
                 padding-top: 50px;
@@ -245,6 +268,9 @@
                         font-size: 45px;
                         color: #F58125;
                         font-family: 'Montserrat', sans-serif;
+                        @include tablet{
+                            text-align: center;
+                        }
                         @include mobile{
                             font-size: 25px;
                             text-align: center;
@@ -253,6 +279,9 @@
 
                     p{
                         font-family: 'Montserrat', sans-serif;
+                        @include tablet{
+                            text-align: center;
+                        }
                         @include mobile{
                             text-align: center;
                         }

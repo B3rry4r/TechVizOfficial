@@ -4,15 +4,12 @@ const Footer = () => {
   return (
     <div className='footer'>
       <div className="fMain">
-        <div className="fLogo">
-          {/* <h1>TECV<span>I</span>Z<span>.</span></h1> */}
-        </div>
         <div className="mainCenter">
           <div className="mainContent">
             <h3>Products</h3>
             <ul>
               <li>Web Development</li>
-              <li>Artificial Intelligence (Ai)</li>
+              <li>Artificial Intelligence</li>
               <li>Graphics Design</li>
               <li>Studio Management</li>
               <li>Videography</li>

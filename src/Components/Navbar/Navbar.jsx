@@ -29,8 +29,10 @@ const Navbar = () => {
   useEffect(() => {
     if (isMenuOpen) {
       document.querySelector('.products')?.classList.add('blurOnNav');
+      document.querySelector('.home')?.classList.add('blurOnNav');
     } else {
       document.querySelector('.products')?.classList.remove('blurOnNav');
+      document.querySelector('.home')?.classList.remove('blurOnNav');
     }
   }, [isMenuOpen]);
 
@@ -97,7 +99,7 @@ useEffect(() => {
           </li>
           <li>Developers</li>
           <li ref={dropdownRef}>
-            <a href='#'>Company</a>
+            <a href='#'>Company &#43;</a>
             {isDropdownOpen ? (
               <ul className={`dropdown-content `} style={{ backgroundColor: navbarColor }}>
                 <li><a href="#">Teams</a></li>

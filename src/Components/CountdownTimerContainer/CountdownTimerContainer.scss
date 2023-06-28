@@ -12,7 +12,7 @@
     background-color: #141516;
     padding: 60px 150px;
     position: relative;
-    @include mobile{
+    @include tablet{
         padding: 70px 20px;
         height: auto;
         gap: 30px;
@@ -112,6 +112,13 @@
         opacity: .6;
         animation: myAnimation 12s ease-in-out infinite;
         transform-origin: center;
+        @include tablet{
+            width: 200px;
+            height: 200px;
+            right: 7%;
+            opacity: .3;
+
+        }
         @include mobile{
             width: 400px;
             height: 400px;
@@ -120,9 +127,7 @@
             bottom: -37%;
             right: 0;
             left: -200px;
-            // margin: auto;
             animation: none;
-    
         }
 
         img {
