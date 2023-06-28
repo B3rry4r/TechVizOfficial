@@ -16,6 +16,19 @@
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 50%);
             z-index: 2;
         }
+
+        .tempReplacementForSlide{
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+
+        img{
+            image-rendering: optimizeSpeed;
+        }
     }
 
     .loader-overlay {
@@ -61,6 +74,10 @@
             border-radius: 50%;
             animation: spin 1s linear infinite;
             opacity: .8;
+            @include mobile{
+                width: 90px;
+                height: 90px;
+            }
         }
 
         @keyframes spin {
@@ -128,6 +145,9 @@
             color: #17234d;
             font-size: 80px;
             font-family: 'Montserrat', sans-serif;
+            @include mobile{
+                font-size: 45px;
+            }
 
             span {
                 color: #F58125;
@@ -191,7 +211,7 @@
             top: 0;
             left: 0;
             right: 0;
-            bottom: -60%;
+            bottom: -55%;
             margin: auto;
             align-items: center;
             justify-content: center;

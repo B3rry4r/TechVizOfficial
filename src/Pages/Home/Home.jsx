@@ -16,6 +16,25 @@ import CountdownTimerContainer from '../../Components/CountdownTimerContainer/Co
 
 const Home = () => {
     const [isLoading, setIsLoading] = useState(true);
+    const [currentImage, setCurrentImage] = useState(0);
+    // const images = [
+    //     { "url": image3 },
+    //     { "url": image1 },
+    //     { "url": image2 },
+    //     { "url": image4 },
+    //     { "url": image5 },
+    //     { "url": image6 },
+    // ];
+
+    const images = [
+        { "url": "https://tecvizhub.github.io/tecviz-images/Assets/image(3).jpg" },
+        { "url": "https://tecvizhub.github.io/tecviz-images/Assets/image(1).jpg" },
+        { "url": "https://tecvizhub.github.io/tecviz-images/Assets/image(2).jpg" },
+        { "url": "https://tecvizhub.github.io/tecviz-images/Assets/image(4).jpg" },
+        { "url": "https://tecvizhub.github.io/tecviz-images/Assets/image(5).jpg" },
+        { "url": "https://tecvizhub.github.io/tecviz-images/Assets/image(6).jpg" },
+    ]
+
     useEffect(() => {
         if (isLoading) {
             // Scroll to the top of the page
@@ -25,16 +44,33 @@ const Home = () => {
 
 
     useEffect(() => {
-        const preloadedImages = images.map((images) => {
+        const loadImage = (url) => {
+          return new Promise((resolve, reject) => {
             const image = new Image();
-            image.src = images.url;
-            return image;
-        });
-
-        Promise.all(preloadedImages.map((image) => image.decode())).then(() => {
-            setIsLoading(false);
-        });
-    }, []);
+            image.onload = () => resolve();
+            image.onerror = () => reject();
+            image.src = url;
+          });
+        };
+      
+        const preloadImages = async () => {
+          const maxConcurrency = 4; // Maximum number of concurrent image loads
+          const imagesCount = images.length;
+          const preloadedImages = [];
+      
+          // Preload images concurrently with limited concurrency
+          for (let i = 0; i < imagesCount; i += maxConcurrency) {
+            const imagePromises = images.slice(i, i + maxConcurrency).map((image) => loadImage(image.url));
+            await Promise.all(imagePromises);
+            preloadedImages.push(...imagePromises);
+          }
+      
+          setIsLoading(false);
+        };
+      
+        preloadImages();
+      }, []);
+      
 
     useEffect(() => {
         if (isLoading) {
@@ -118,19 +154,6 @@ const Home = () => {
                         reset: true,
                     },
                 },
-                // {
-                //     element: '.animated-p',
-                //     config: {
-                //         origin: 'bottom',
-                //         distance: '40px',
-                //         duration: 1000,
-                //         delay: 300,
-                //         easing: 'ease-out',
-                //         reset: true,
-                //     },
-                // },
-                //SomeThingBigElements
-                // Add more objects for additional elements
             ];
 
             const paragraphs = document.querySelectorAll('.animated-p');
@@ -154,15 +177,7 @@ const Home = () => {
 
 
     //Carousel
-    const [currentImage, setCurrentImage] = useState(0);
-    const images = [
-        { "url": image3 },
-        { "url": image1 },
-        { "url": image2 },
-        { "url": image4 },
-        { "url": image5 },
-        { "url": image6 },
-    ];
+  
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -176,15 +191,6 @@ const Home = () => {
 
     return (
         <div className='home'>
-            {/* <>
-                {
-                    isLoading ? (
-                        
-                    ) : (
-                        ''
-                    )
-                }
-            </> */}
             {
                 isLoading ? (
                     <>

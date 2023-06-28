@@ -99,7 +99,7 @@ useEffect(() => {
           </li>
           <li>Developers</li>
           <li ref={dropdownRef}>
-            <a href='#'>Company &#43;</a>
+            <a href='#' onClick={toggleDropdown}>Company</a>
             {isDropdownOpen ? (
               <ul className={`dropdown-content `} style={{ backgroundColor: navbarColor }}>
                 <li><a href="#">Teams</a></li>
