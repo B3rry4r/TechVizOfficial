@@ -27,6 +27,14 @@ const Navbar = () => {
   };
 
   useEffect(() => {
+    if (isMenuOpen) {
+      document.querySelector('.products')?.classList.add('blurOnNav');
+    } else {
+      document.querySelector('.products')?.classList.remove('blurOnNav');
+    }
+  }, [isMenuOpen]);
+
+  useEffect(() => {
     const changeNavbarColor = () => {
       if (window.scrollY > 0) {
         setNavbarClass('onScrollActive'); //Set class

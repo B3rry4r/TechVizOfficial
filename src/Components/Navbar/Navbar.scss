@@ -219,8 +219,11 @@
                 flex-direction: column;
                 gap: 10px;
                 padding: 20px 10px;
-                background-color: rgba(0, 0, 0, 0.35);
+                background-color: rgba(0, 0, 0, 0.5);
                 color: white;
+                @include mobile{
+                    max-height: 60px;
+                }
 
                 a{
                     font-family: 'Montserrat', sans-serif;
@@ -235,6 +238,11 @@
                     position: static;
                     display: block;
                     padding: 10px;
+                    @include mobile{
+                        width: 90%;
+                        margin-top: 10px;
+                        background-color: transparent !important;
+                    }
 
                     li{
                         border: none;
