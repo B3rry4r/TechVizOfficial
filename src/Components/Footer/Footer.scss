@@ -1,3 +1,5 @@
+@import "../../style.scss";
+
 .footer {
     width: 100%;
     height: 700px;
@@ -6,15 +8,9 @@
     flex-direction: column;
     gap: 120px;
     position: relative;
-
-    img {
-        position: absolute;
-        height: 100%;
-        width: 230px;
+    @include mobile{
+        padding: 40px;
         height: auto;
-        opacity: .1;
-        top: 140px;
-        right: 0;
     }
 
     .fMain {
@@ -25,6 +21,8 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: start;
+        @include mobile{
+        }
 
         .fLogo {
 
@@ -42,9 +40,30 @@
         .mainCenter {
             display: flex;
             gap: 90px;
+            @include mobile{
+                flex-wrap: wrap;
+                gap: 30px;
+            }
 
             .mainContent:nth-of-type(1) {
                 width: 300px;
+
+                @include mobile{
+                    width: auto;
+                }
+            }
+
+
+            .mainContent:nth-of-type(3){
+                @include mobile{
+                    margin-top: 30px;                    
+                }
+            }
+
+            .mainContent:nth-of-type(4) {
+                @include mobile{
+                    display: none;
+                }
             }
 
             .mainContent {
@@ -95,9 +114,21 @@
         }
     }
 
+    .fMainMobile{
+        width: 100%;
+        height: 700px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding: 20px;
+    }
+
     .fRightsBottom {
         display: flex;
         justify-content: space-between;
+        @include mobile{
+            flex-direction: column;
+        }
 
         p:nth-of-type(2) {
             cursor: pointer;

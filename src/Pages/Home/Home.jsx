@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import image1 from '../../Assets/image(1).jpg';
+import aboutSImg from '../../Assets/AppLogos/TechvizAppLogoBW.svg';
 import image2 from '../../Assets/image(2).jpg';
 import image3 from '../../Assets/image(3).jpg';
 import image4 from '../../Assets/image(4).jpg';
@@ -65,7 +66,7 @@ const Home = () => {
                 {
                     element: '.static-element p',
                     config: {
-                        origin: 'right',
+                        origin: 'left',
                         distance: '70px',
                         duration: 800,
                         delay: 200,
@@ -76,7 +77,7 @@ const Home = () => {
                 {
                     element: '.static-element h3',
                     config: {
-                        origin: 'right',
+                        origin: 'left',
                         distance: '100px',
                         duration: 800,
                         delay: 300,
@@ -216,10 +217,11 @@ const Home = () => {
                             <div className="staticAnimation">
                                 <Lottie animationData={tv} loop={true} />
                             </div>
-                        </div><div className="aboutSec">
+                        </div>
+                        <div className="aboutSec">
                             <div className="content">
                                 <div className="file">
-                                    <img src="https://images.unsplash.com/photo-1580920461931-fcb03a940df5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="" />
+                                    <img src={aboutSImg} alt="" />
                                 </div>
                                 <div className="contentDesc">
                                     <h1>Our <span>Story</span></h1>

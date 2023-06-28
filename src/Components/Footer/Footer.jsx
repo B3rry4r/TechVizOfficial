@@ -1,10 +1,8 @@
-import image from '../../Assets/plRight copy.svg';
 import './Footer.scss';
 
 const Footer = () => {
   return (
     <div className='footer'>
-      <img src={image} alt="" />
       <div className="fMain">
         <div className="fLogo">
           {/* <h1>TECV<span>I</span>Z<span>.</span></h1> */}
@@ -59,8 +57,6 @@ const Footer = () => {
         </div>
 
       </div>
-
-
 
       <div className="fRightsBottom">
         <p>© 2023 copyright all rights reserved</p>
