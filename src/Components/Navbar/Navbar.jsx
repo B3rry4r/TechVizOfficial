@@ -23,9 +23,15 @@ const Navbar = () => {
     if (isMenuOpen) {
       document.querySelector('.products')?.classList.add('blurOnNav');
       document.querySelector('.home')?.classList.add('blurOnNav');
+      document.querySelector('.theHub')?.classList.add('blurOnNav');
+      document.querySelector('.es')?.classList.add('blurOnNav');
+      document.querySelector('.wd')?.classList.add('blurOnNav');
     } else {
       document.querySelector('.products')?.classList.remove('blurOnNav');
       document.querySelector('.home')?.classList.remove('blurOnNav');
+      document.querySelector('.theHub')?.classList.remove('blurOnNav');
+      document.querySelector('.es')?.classList.remove('blurOnNav');
+      document.querySelector('.wd')?.classList.remove('blurOnNav');
     }
   }, [isMenuOpen]);
 

@@ -1,9 +1,10 @@
-import React from 'react'
-import './ES.scss'
-import appLogoWO from '../../../Assets/AppLogos/TechvizAppLogoWO.svg'
-
-import heroLogo from '../../../Assets/Products-Logo/embedded-c-logo-o.svg'
+import React from 'react';
+import './ES.scss';
+import appLogoWO from '../../../Assets/AppLogos/TechvizAppLogoWO.svg';
+import heroLogo from '../../../Assets/Products-Logo/embedded-c-logo-o.svg';
 import es from '../../../Assets/es.json';
+import hubLogo from '../../../Assets/AppLogos/Hub-Lab-tw.svg'
+
 import Lottie from 'lottie-react';
 import CountdownTimerContainer from '../../../Components/CountdownTimerContainer/CountdownTimerContainer';
 
@@ -18,6 +19,7 @@ const ES = () => {
                 </div>
                 <div className="esLottie">
                     <Lottie animationData={es} loop={true} />
+                    <img className='hubLogo' src={hubLogo} alt="" />
                     <img src={appLogoWO} alt="" />
                 </div>
             </div>

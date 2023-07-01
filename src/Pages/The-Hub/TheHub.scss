@@ -20,7 +20,8 @@
       position: relative;
       flex: 5;
       @include mobile{
-      flex: auto;
+      flex: 0;
+      height: 200px;
       }
 
 
@@ -115,7 +116,7 @@
 
     .right {
       flex: 5;
-      padding: 30px;
+      padding: 0 30px 30px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -165,9 +166,16 @@
         span {
           color: #F58125;
         }
+
+        @include mobile{
+          font-size: 24px;
+          text-align: center;
+        }
       }
 
-      p {}
+      p {
+        
+      }
     }
   }
 
