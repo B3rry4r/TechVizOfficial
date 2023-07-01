@@ -303,14 +303,15 @@
                         //     gap: 20px;
                         // }
 
-                        button{
+                        button, a{
                             font-family: 'Montserrat', sans-serif;
                             padding: 13px 18px;
                             color: white;
+                            font-size: 14px;
                             background-color: transparent;
                             border: none;
                             background-color: #F58125;
-                            border-radius: 20px;
+                            border-radius: 25px;
                             cursor: pointer;
                             transition: all .4s ease-in-out;
                             &:hover{

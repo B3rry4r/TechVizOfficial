@@ -11,6 +11,7 @@ import grapgicsDesign from '../../Assets/grapgics-design.jpg';
 import Lottie from 'lottie-react';
 import appLogoBW from '../../Assets/AppLogos/Techviz.svg';
 import CountdownTimerContainer from '../../Components/CountdownTimerContainer/CountdownTimerContainer';
+import { Link } from 'react-router-dom';
 
 
 
@@ -40,7 +41,7 @@ const Products = () => {
             </div>
           </div>
           <div className="bottom">
-            <p>Lorem ipsum dolor sit amet conseprovident nesciunt modi, omnis eveniet quod obcaecati corporis et repudiandae fugiat accusamus fuga consequuntur alias. Laudantium officia beatae numquam itaque ut dolorum facere. Laboriosam aliquam iste pariatur doloremque quia.</p>
+            <p>We're at the forefront of innovation, combining cutting-edge technology with creative thinking to deliver outstanding solutions for businesses around the globe. Whether you're looking to transform your operations, optimize your digital presence, or harness the power of artificial intelligence, we have the expertise and passion to make it happen. Explore our services and discover how we can help your business thrive in the digital age.</p>
             <button>Next Step</button>
           </div>
         </div>
@@ -53,7 +54,19 @@ const Products = () => {
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eos laborum ad illum. Aliquam ipsum atque necessitatibus reiciendis omnis consequatur pariatur ex neque similique optio dignissimos soluta dolor provident, eligendi sit officiis sint voluptates sequi et asperiores amet nulla porro. Soluta porro neque, tempore molestias voluptatum incidunt ut ratione facilis.</p>
               <div className="buttons">
                 <button>Service</button>
-                <button>Take A Course</button>
+                <Link to="/the-hub/website-development" >Visit The Hub</Link>
+              </div>
+            </div>
+            <div className="maxCardProductConentsCardC_">
+              <img src={webDev} alt="" />
+              <h2>Embedded Systems Designs</h2>
+              <p>An embedded system is a computer system designed to perform specific tasks or functions within a larger system. It is a 
+            combination of hardware and software, tightly integrated and dedicated to a particular purpose.
+          Embedded systems are all around us, powering the devices and technology we use every day. From smartphones and smartwatches
+             to home appliances, medical devices, and automotive systems, embedded systems are at the heart of modern technology.</p>
+              <div className="buttons">
+              <button>Service</button>
+                <Link to="/the-hub/embedded-systems" >Visit The Hub</Link>
               </div>
             </div>
             <div className="maxCardProductConentsCardC_">

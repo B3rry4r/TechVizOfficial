@@ -1,4 +1,7 @@
 import './Footer.scss';
+import { Link } from 'react-router-dom';
+
+
 
 const Footer = () => {
   return (
@@ -50,9 +53,7 @@ const Footer = () => {
               <li><a href="http://www.linkedin.com/in/"><i class="fa-brands fa-linkedin"></i> Linkedin</a></li>
             </ul>
           </div>
-
         </div>
-
       </div>
 
       <div className="fRightsBottom">

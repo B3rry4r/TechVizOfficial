@@ -19,13 +19,6 @@ const Navbar = () => {
     setMenuOpen(!isMenuOpen);
   };
 
-  const handleClickOutside = (event) => {
-    event.preventDefault();
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setDropdownOpen(false);
-    }
-  };
-
   useEffect(() => {
     if (isMenuOpen) {
       document.querySelector('.products')?.classList.add('blurOnNav');
@@ -54,26 +47,38 @@ const Navbar = () => {
     };
   }, []);
 
-useEffect(() => {
-  if (isMenuOpen) {
-    document.body.classList.add('disable-scroll');
-  } else {
-    document.body.classList.remove('disable-scroll');
-  }
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add('disable-scroll');
+    } else {
+      document.body.classList.remove('disable-scroll');
+    }
 
-  return () => {
-    document.body.classList.remove('disable-scroll');
-  };
-}, [isMenuOpen]);
+    return () => {
+      document.body.classList.remove('disable-scroll');
+    };
+  }, [isMenuOpen]);
 
-  
+
 
   useEffect(() => {
+    const handleClickOutside = (event) => {
+      event.preventDefault()
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        if (event.target.tagName.toLowerCase() === 'a') {
+          return; // Clicked on <a> tag, skip handling
+        }
+        setDropdownOpen(false);
+      }
+    };
+
     window.addEventListener('click', handleClickOutside);
+
     return () => {
       window.removeEventListener('click', handleClickOutside);
     };
   }, []);
+
 
   return (
     <nav className={`navbar ${navbarClass}`} id='nav' style={{ backgroundColor: navbarColor }}>
@@ -93,15 +98,19 @@ useEffect(() => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/research" activeClassName="active" >
-              Research
+            <NavLink to="/the-hub" activeClassName="active" >
+              The-Hub
             </NavLink>
           </li>
-          <li>Developers</li>
+          <li>
+            <NavLink to="/404" activeClassName="active" >
+              Developers
+            </NavLink>
+            </li>
           <li ref={dropdownRef}>
-            <a href='#' onClick={toggleDropdown}>Company</a>
+            <p onClick={toggleDropdown} className={` ${isDropdownOpen ? 'active' : ''} ` }>Company</p>
             {isDropdownOpen ? (
-              <ul className={`dropdown-content `} style={{ backgroundColor: navbarColor }}>
+              <ul className={`dropdown-content`} style={{ backgroundColor: navbarColor }}>
                 <li><a href="#">Teams</a></li>
                 <li><a href="#">Features</a></li>
                 <li><a href="#">Products</a></li>
@@ -126,48 +135,45 @@ useEffect(() => {
         {
           isMenuOpen ? (
             <ul>
-          <li>
-            <NavLink exact to="/" activeClassName="active" onClick={toggleMenu}>
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/products" activeClassName="active" onClick={toggleMenu}>
-              Products
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/research" activeClassName="active" onClick={toggleMenu}>
-              Research
-            </NavLink>
-          </li>
-          <li onClick={toggleMenu} >Developers</li>
-          <li ref={dropdownRef}>
-            <a href='#' onClick={toggleDropdown}>Company</a>
-            {isDropdownOpen ? (
-              <ul className={`dropdown-content `} style={{ backgroundColor: navbarColor }}>
-                <li><a href="#">Teams</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Developers</a></li>
-              </ul>
-            ) : (
-              ''
-            )
-            }
-          </li>
+              <li>
+                <NavLink exact to="/" activeClassName="active" onClick={toggleMenu}>
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/products" activeClassName="active" onClick={toggleMenu}>
+                  Products
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/the-hub" activeClassName="active" onClick={toggleMenu}>
+                  The-Hub
+                </NavLink>
+              </li>
+              <li onClick={toggleMenu} >Developers</li>
+              <li ref={dropdownRef}>
+                <a href='#' onClick={toggleDropdown}>Company</a>
+                {isDropdownOpen ? (
+                  <ul className={`dropdown-content `} style={{ backgroundColor: navbarColor }}>
+                    <li><a href="#">Teams</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Developers</a></li>
+                  </ul>
+                ) : (
+                  ''
+                )
+                }
+              </li>
 
-        </ul>
+            </ul>
           ) : (
             ''
           )
-        }         
+        }
       </div>
     </nav>
   )
 }
 
 export default Navbar
-
-
-

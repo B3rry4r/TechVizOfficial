@@ -217,7 +217,7 @@ const Home = () => {
                             <div className="static-element">
                                 <h3 className=''>Welcome to</h3>
                                 <h1>TECV<span>I</span>Z</h1>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit voluptas in quam hic! Impedit, neque!</p>
+                                <p>Your Dependable Associate in Cutting-Edge Technology Services</p>
                                 <button>Learn More</button>
                             </div>
                             <div className="staticAnimation">
@@ -267,7 +267,7 @@ const Home = () => {
                                                 <h2>Future-proof </h2>
                                                 <span>your enterprise</span>
                                             </div>
-                                            <p>Adopt a content architecture that is really composable and compatible with disruptive technology of the future.</p>
+                                            <p>Adopt a content architecture that is genuinely composable and compatible with future transformative technologies.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -295,7 +295,7 @@ const Home = () => {
                                     <p className='animated-p' >Social Media Management</p>
                                 </div>
                             </div>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus, sint!</p>
+                            <p className='animated-p'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, voluptatum.</p>
                             <button>Get Started <span>&#8594;</span></button>
                         </div>
                     </>
