@@ -3,6 +3,7 @@ import CountdownTimerContainer from '../../../Components/CountdownTimerContainer
 import Lottie from 'lottie-react';
 import appLogoWO from '../../../Assets/AppLogos/TechvizAppLogoWO.svg';
 import es from '../../../Assets/es.json';
+import hubLab from '../../../Assets/hubLab.json';
 import './WD.scss';
 import hubLogo from '../../../Assets/AppLogos/Hub-Lab-tw.svg'
 
@@ -15,7 +16,7 @@ const WD = () => {
                     <p>Learn how to create websites from scratch and take your skills to the next level.</p>
                 </div>
                 <div className="esLottie">
-                    <Lottie animationData={es} loop={true} />
+                    <Lottie animationData={hubLab} loop={true} />
                     <img className='hubLogo' src={hubLogo} alt="" />
                     <img src={appLogoWO} alt="" />
                 </div>

@@ -2,12 +2,6 @@ import React from 'react';
 import './Products.scss';
 import techVizIllustration from '../../Assets/AppLogos/techVizIllustration.svg'
 import Product from '../../Assets/Product.json';
-import webDev from '../../Assets/product-1.jpg';
-import videography from '../../Assets/videography.jpg';
-import architecture from '../../Assets/architecture.jpg';
-import contentCreation from '../../Assets/content-creation.jpg';
-import socialMedia from '../../Assets/social-media.jpg';
-import grapgicsDesign from '../../Assets/grapgics-design.jpg';
 import Lottie from 'lottie-react';
 import appLogoBW from '../../Assets/AppLogos/Techviz.svg';
 import CountdownTimerContainer from '../../Components/CountdownTimerContainer/CountdownTimerContainer';
@@ -16,6 +10,14 @@ import { Link } from 'react-router-dom';
 
 
 const Products = () => {
+  
+  const webDev = 'https://tecvizhub.github.io/tecviz-images/Assets/product-1.jpg';
+  const embeddedSystems = 'https://tecvizhub.github.io/tecviz-images/Assets/image(5).jpg';
+  const videography = 'https://tecvizhub.github.io/tecviz-images/Assets/videography.jpg';
+  const architecture = 'https://tecvizhub.github.io/tecviz-images/Assets/architecture.jpg';
+  const contentCreation = 'https://tecvizhub.github.io/tecviz-images/Assets/social-media.jpg';
+  const grapgicsDesign = 'https://tecvizhub.github.io/tecviz-images/Assets/grapgics-design.jpg';
+  const socialMedia = 'https://tecvizhub.github.io/tecviz-images/Assets/content-creation.jpg'
   return (
     <div className='products'>
       <div className="productTopAnimation">
@@ -58,7 +60,7 @@ const Products = () => {
               </div>
             </div>
             <div className="maxCardProductConentsCardC_">
-              <img src={webDev} alt="" />
+              <img src={embeddedSystems} alt="" />
               <h2>Embedded Systems Designs</h2>
               <p>An embedded system is a computer system designed to perform specific tasks or functions within a larger system. It is a 
             combination of hardware and software, tightly integrated and dedicated to a particular purpose.

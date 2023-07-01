@@ -10,21 +10,23 @@
         background-color: black;
         display: flex;
         align-items: center;
-        @include mobile{
+
+        @include mobile {
             padding: 30px;
             flex-direction: column-reverse;
             height: 500px;
-    
+
         }
 
         .container {
             flex: 4;
             display: flex;
             // justify-content: center;
-            // align-items: center;
+            align-items: center;
             flex-direction: column;
             gap: 40px;
-            @include mobile{
+
+            @include mobile {
                 gap: 20px;
             }
 
@@ -32,7 +34,7 @@
                 color: #F58125;
                 font-size: 50px;
 
-                @include mobile{
+                @include mobile {
                     font-size: 24px;
                     text-align: center;
                 }
@@ -41,7 +43,8 @@
 
             p {
                 color: white;
-                @include mobile{
+
+                @include mobile {
                     font-size: 13px;
                     text-align: center;
                 }
@@ -56,19 +59,25 @@
             height: 600px;
             position: relative;
 
-            @include mobile{
+            @include mobile {
                 width: 300px;
                 height: 300px;
             }
 
-            svg {
-                z-index: 2;
-                @include mobile{
+            div {
+                width: 420px;
+                height: 420px;
+                margin-top: 100px;
+                margin-left: 200px;
+
+                svg {
+                }
+                @include mobile {
                     display: none;
                 }
             }
 
-            .hubLogo{
+            .hubLogo {
                 margin: auto;
                 width: 100%;
                 height: 300px;
@@ -76,7 +85,7 @@
                 display: none;
                 opacity: .8;
 
-                @include mobile{
+                @include mobile {
                     display: block;
                 }
             }
@@ -89,7 +98,7 @@
                 top: 0;
                 left: 0;
 
-                @include mobile{
+                @include mobile {
                     display: none;
                     right: 0;
                     bottom: 0;
@@ -108,7 +117,8 @@
         display: flex;
         flex-direction: column;
         gap: 30px;
-        @include mobile{
+
+        @include mobile {
             padding: 50px 10px;
         }
 
@@ -116,26 +126,28 @@
             color: #F58125;
             text-align: center;
 
-            @include mobile{
+            @include mobile {
                 font-size: 24px;
             }
         }
 
         .hubLevels {
             display: flex;
-            @include mobile{
+
+            @include mobile {
                 flex-direction: column;
             }
 
             .level {
                 padding: 10px;
                 width: 35%;
-                @include mobile{
+
+                @include mobile {
                     width: 100%;
                 }
 
                 .container {
-                height: 390px;
+                    height: 390px;
                     display: flex;
                     flex-direction: column;
                     gap: 20px;
@@ -178,7 +190,7 @@
 
         .resources {
             padding: 10px;
-            
+
             .container {
                 display: flex;
                 flex-direction: column;

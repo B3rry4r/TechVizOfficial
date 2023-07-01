@@ -69,7 +69,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      event.preventDefault()
+      // event.preventDefault();
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         if (event.target.tagName.toLowerCase() === 'a') {
           return; // Clicked on <a> tag, skip handling
