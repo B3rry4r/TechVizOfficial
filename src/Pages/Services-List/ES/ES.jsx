@@ -4,14 +4,15 @@ import appLogoWO from '../../../Assets/AppLogos/TechvizAppLogoWO.svg';
 import heroLogo from '../../../Assets/Products-Logo/embedded-c-logo-o.svg';
 import es from '../../../Assets/es.json';
 import hubLogo from '../../../Assets/AppLogos/Hub-Lab-tw.svg'
-
 import Lottie from 'lottie-react';
 import CountdownTimerContainer from '../../../Components/CountdownTimerContainer/CountdownTimerContainer';
+import Black from '../../../Components/Black/Black';
 
 
 const ES = () => {
     return (
         <div className='es'>
+            <Black/>
             <div class="hero">
                 <div class="container">
                     <h1>Embedded Systems</h1>

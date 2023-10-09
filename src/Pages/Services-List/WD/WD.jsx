@@ -6,10 +6,12 @@ import es from '../../../Assets/es.json';
 import hubLab from '../../../Assets/hubLab.json';
 import './WD.scss';
 import hubLogo from '../../../Assets/AppLogos/Hub-Lab-tw.svg'
+import Black from '../../../Components/Black/Black';
 
 const WD = () => {
     return (
         <div className='wd'>
+            <Black/>
             <div class="hero">
                 <div class="container">
                     <h1>Website Development</h1>

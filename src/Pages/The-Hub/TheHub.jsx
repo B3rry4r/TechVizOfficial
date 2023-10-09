@@ -4,6 +4,7 @@ import './TheHub.scss';
 import aboutSImg from '../../Assets/AppLogos/TechvizAppLogoOW.svg';
 import ScrollReveal from 'scrollreveal';
 import { useNavigate } from 'react-router-dom';
+import Black from '../../Components/Black/Black';
 
 
 
@@ -40,6 +41,7 @@ const TheHub = () => {
 
     return (
         <div className='theHub' >
+            <Black/>
             <div className="theHubHero">
                 <div className="left">
                     <div className="spinner">
@@ -48,7 +50,7 @@ const TheHub = () => {
                 </div>
                 <div className="right">
                     <h2>The Hub Lab</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam hic omnis asperiores rerum ducimus explicabo cum similique ipsam! Quis, aperiam.</p>
+                    <p>Welcome to Hub Lab, the cutting-edge training platform by Tecviz, where we unlock your true potential and equip you with the skills that shape the future. With a diverse range of courses in Web Development, Artificial Intelligence, Graphics Design, Studio Management, Videography, and Architecture, we are your ultimate destination for transformative learning experiences.</p>
                 </div>
             </div>
 
@@ -58,7 +60,7 @@ const TheHub = () => {
                 </div>
                 <div className="concept">
                     <h1>Concept of <span>The Hub Lab</span></h1>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi reprehenderit consequatur, rerum, veritatis id, fugiat facere atque doloribus numquam temporibus eos? Facere minima maxime illum laudantium iure pariatur voluptatum! Libero, itaque! Tempora at facere, blanditiis aspernatur mollitia debitis repellat iusto.</p>
+                    <p>Hub Lab is a transformative training platform by Tecviz, empowering individuals with future-ready skills in Web Development, Artificial Intelligence, Graphics Design, Studio Management, Videography, and Architecture. Guided by industry experts and equipped with state-of-the-art infrastructure, Hub Lab offers a personalized learning experience with hands-on projects, flexible schedules, and a commitment to career advancement. Whether you are a beginner or a professional seeking to upskill, Hub Lab unlocks your true potential, preparing you for success in an ever-evolving world, where innovation and creativity thrive. Step into the realm of endless possibilities and embark on a journey of growth and discovery with Hub Lab – where knowledge and imagination converge to shape the future.</p>
                 </div>
             </div>
             <div className="courses">

@@ -17,23 +17,33 @@ import CountdownTimerContainer from '../../Components/CountdownTimerContainer/Co
 const Home = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [currentImage, setCurrentImage] = useState(0);
-    // const images = [
-    //     { "url": image3 },
-    //     { "url": image1 },
-    //     { "url": image2 },
-    //     { "url": image4 },
-    //     { "url": image5 },
-    //     { "url": image6 },
-    // ];
-
+    const [currentIndex, setCurrentIndex] = useState(0);
     const images = [
-        { "url": "https://tecvizhub.github.io/tecviz-images/Assets/image(3).jpg" },
-        { "url": "https://tecvizhub.github.io/tecviz-images/Assets/image(1).jpg" },
-        { "url": "https://tecvizhub.github.io/tecviz-images/Assets/image(2).jpg" },
-        { "url": "https://tecvizhub.github.io/tecviz-images/Assets/image(4).jpg" },
-        { "url": "https://tecvizhub.github.io/tecviz-images/Assets/image(5).jpg" },
-        { "url": "https://tecvizhub.github.io/tecviz-images/Assets/image(6).jpg" },
-    ]
+        { "url": image4 },
+        { "url": image1 },
+        { "url": image2 },
+        { "url": image5 },
+        { "url": image3 },
+        { "url": image6 },
+    ];
+
+    // const images = [
+    //     { "url": "https://tecvizhub.github.io/tecviz-images/Assets/image(3).jpg" },
+    //     { "url": "https://tecvizhub.github.io/tecviz-images/Assets/image(1).jpg" },
+    //     { "url": "https://tecvizhub.github.io/tecviz-images/Assets/image(2).jpg" },
+    //     { "url": "https://tecvizhub.github.io/tecviz-images/Assets/image(4).jpg" },
+    //     { "url": "https://tecvizhub.github.io/tecviz-images/Assets/image(5).jpg" },
+    //     { "url": "https://tecvizhub.github.io/tecviz-images/Assets/image(6).jpg" },
+    // ]
+
+    useEffect(() => {
+        const interval = setInterval(() =>{
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % 6);
+        }, 1000);
+        return () => clearInterval(interval);
+    }, []);
+
+    const headings = ["T","E","C","V","I","Z"];
 
     useEffect(() => {
         if (isLoading) {
@@ -124,8 +134,8 @@ const Home = () => {
                 {
                     element: '.static-element h1',
                     config: {
-                        origin: 'left',
-                        distance: '70px',
+                        origin: 'bottom',
+                        distance: '100px',
                         duration: 800,
                         delay: 300,
                         easing: 'ease-out',
@@ -215,10 +225,14 @@ const Home = () => {
                                     className={`slide ${index === currentImage ? 'active' : ''}`} />
                             ))}
                             <div className="static-element">
-                                <h3 className=''>Welcome to</h3>
-                                <h1>TECV<span>I</span>Z</h1>
+                                <div className="text">
+                                    {headings.map((content, index) =>(
+                                        <h1 key={index} style={{ color : index === currentIndex ? "#F58125" : "White "}} >
+                                            {content}
+                                        </h1>
+                                    ))}
+                                </div>
                                 <p>Your Dependable Associate in Cutting-Edge Technology Services</p>
-                                <button>Learn More</button>
                             </div>
                             <div className="staticAnimation">
                                 <Lottie animationData={tv} loop={true} />
@@ -295,7 +309,7 @@ const Home = () => {
                                     <p className='animated-p' >Social Media Management</p>
                                 </div>
                             </div>
-                            <p className='animated-p'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, voluptatum.</p>
+                            <p className='animated-p'>With Tecviz, Unlock the potential of innovation: Your Path to Cutting-Edge Solutions Where Innovation Meets Excellence</p>
                             <button>Get Started <span>&#8594;</span></button>
                         </div>
                     </>

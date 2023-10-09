@@ -1,0 +1,15 @@
+@import "../../style.scss";
+
+.black{
+    background-color: black;
+    padding: 100px;
+    width: 100%;
+
+    @include tablet{
+        padding: 50px;
+    }
+
+    @include mobile{
+        display: none;
+    }
+}

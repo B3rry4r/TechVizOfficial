@@ -11,24 +11,23 @@ const Footer = () => {
           <div className="mainContent">
             <h3>Products</h3>
             <ul>
-              <li>Web Development</li>
-              <li>Artificial Intelligence</li>
-              <li>Graphics Design</li>
-              <li>Studio Management</li>
-              <li>Videography</li>
-              <li>Architecture</li>
+              <li><Link to='/website-development' >Web Development</Link></li>
+              <li><Link to='/artificial-intelligence' >Artificial Intelligence</Link></li>
+              <li><Link to='/graphics-design' >Graphics Design</Link></li>
+              <li><Link to='/studio-management' >Studio Management</Link></li>
+              <li><Link to='/videography' >Videography</Link></li>
+              <li><Link to='/architecture' >Architecture</Link></li>
             </ul>
           </div>
 
           <div className="mainContent">
             <h3>Company</h3>
             <ul>
-              <li>Home</li>
+              <li>Teams</li>
               <li>Events</li>
               <li>Features</li>
-              <li>Contact us</li>
               <li>Developers</li>
-              <li>Teams</li>
+              <li>Contact us</li>
             </ul>
           </div>
 
